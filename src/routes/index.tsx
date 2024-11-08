@@ -9,7 +9,7 @@ const IndexPage = () => {
     const { data } = await Supabase.auth.getSession();
 
     if (!data?.session) {
-      navigate("/login", { replace: true });
+      navigate("/auth/login", { replace: true });
     } else {
       navigate("/dashboard", { replace: true });
     }
