@@ -52,7 +52,6 @@ const ChildModal = ({ onClose, onSubmit, child }: any) => {
     e.preventDefault();
 
     const newChild = {
-      id: child?.id || "", // Use id instead of child_id
       first_name: firstName(),
       last_name: lastName(),
       date_of_birth: dateOfBirth(),
@@ -67,7 +66,14 @@ const ChildModal = ({ onClose, onSubmit, child }: any) => {
       photo_url: photoUrl(),
     };
 
-    await onSubmit(newChild);
+    if (child?.id) {
+      // Update existing child
+      await onSubmit({ id: child.id, ...newChild });
+    } else {
+      // Add new child
+      await onSubmit(newChild); // Do not include `id`
+    }
+
     onClose();
   };
 

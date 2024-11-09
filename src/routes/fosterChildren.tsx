@@ -4,7 +4,7 @@ import { Supabase } from "../../supabaseClient";
 import ChildModal from "~/components/modals/ChildModal";
 
 type Child = {
-  id: string;
+  id: string; // uuid
   first_name: string;
   last_name: string;
   date_of_birth: string;
@@ -64,7 +64,7 @@ const FosterChildren = () => {
 
   const handleAddChild = async (childData: Omit<Child, "id">) => {
     const { data, error } = await Supabase.from("foster-children")
-      .insert([{ ...childData }])
+      .insert([childData]) // Do not include `id`
       .select();
 
     if (error) {
