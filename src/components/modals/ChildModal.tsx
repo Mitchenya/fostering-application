@@ -67,11 +67,9 @@ const ChildModal = ({ onClose, onSubmit, child }: any) => {
     };
 
     if (child?.id) {
-      // Update existing child
       await onSubmit({ id: child.id, ...newChild });
     } else {
-      // Add new child
-      await onSubmit(newChild); // Do not include `id`
+      await onSubmit(newChild);
     }
 
     onClose();
