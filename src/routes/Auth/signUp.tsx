@@ -14,7 +14,7 @@ const SignUp = () => {
       email: email(),
       password: password(),
       options: {
-        emailRedirectTo: "http://localhost:3000/auth/login",
+        emailRedirectTo: "https://fosteringapp.netlify.app/auth/login",
       },
     });
 
