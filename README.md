@@ -1,3 +1,7 @@
+PLEASE READ!
+
+To ensure you're able to login, please use these details - testemail@outlook.com & Foster1 as the password.
+
 # SolidStart
 
 Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
